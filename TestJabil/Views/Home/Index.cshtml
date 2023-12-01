@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>MATERIALS TEST</h1>
+    <p class="lead">Este es una app de prueba técnica en la vacante de Programmer Analyst I para la empresa Jabil.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Buildings</h2>
+        <p>
+            Add the Buildings.
+        </p>
+        <p>@Html.ActionLink("GO", "Building", "Building", new { @class = "btn btn-primary"})</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Customers</h2>
+        <p>
+            Add the Customers.
+        </p>
+        <p>@Html.ActionLink("GO", "Index", "Customer", null, new { @class = "btn btn-primary"})</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Part Numbers</h2>
+        <p>
+            Add and consult the Part Numbers.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">GO &raquo;</a></p>
+    </div>
+</div>

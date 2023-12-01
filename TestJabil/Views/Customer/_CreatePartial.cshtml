@@ -1,0 +1,27 @@
+﻿@model TestJabil.Models.Customer
+@{
+    ViewBag.Title = "Agregar Cliente";
+    List<SelectListItem> item = (List<SelectListItem>)ViewBag.BuildingList;
+}
+
+<h3>Agregar Edificio</h3>
+
+@using (Html.BeginForm("Create", "Customer", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(model => model.customer, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.customer, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.customer, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Prefix, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.Prefix, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Prefix, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary" />
+    </div>
+}

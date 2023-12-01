@@ -1,0 +1,29 @@
+﻿@model TestJabil.Models.PartNumbers
+@{
+    ViewBag.Title = "Agregar Edificio";
+}
+
+<h3>Agregar Edificio</h3>
+
+@using (Html.BeginForm("Create", "Building", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(model => model.PartNumberValue, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.PartNumberValue, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PartNumberValue, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Customer, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.Customer, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Customer, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Available, htmlAttributes: new { @class = "control-label" })
+        @Html.CheckBoxFor(model => model.Available, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Available, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary" />
+    </div>
+}

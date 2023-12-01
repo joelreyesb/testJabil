@@ -1,0 +1,13 @@
+﻿@model IEnumerable<TestJabil.Models.Building> 
+@{
+    ViewBag.Title = "Building";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="container">
+    <div class="col-sm">
+        @{ Html.RenderPartial("_CreatePartialView"); }
+    </div>
+</div>
+

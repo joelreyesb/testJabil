@@ -1,0 +1,30 @@
+CREATE DATABASE Materials;
+GO
+
+USE Materials;
+GO
+
+CREATE TABLE Buildings (
+	PKBuilding INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	Building VARCHAR(255) NOT NULL
+)
+GO
+
+
+CREATE TABLE Customers ( 
+	PKCustomers INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	Customer VARCHAR(255) NOT NULL,
+	Prefix VARCHAR (5) NOT NULL,
+	FKBuilding INT NOT NULL,
+	FOREIGN KEY (FKBuilding) REFERENCES Buildings(PKBuilding)
+)
+GO
+
+CREATE TABLE PartNumbers (
+	PKPartNumber INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	PartNumber VARCHAR(50) NOT NULL,
+	FKCustomer INT NOT NULL,
+	Available BIT NOT NULL,
+	FOREIGN KEY (FKCustomer) REFERENCES Customers(PKCustomers)
+)
+GO
